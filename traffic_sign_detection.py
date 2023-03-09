@@ -82,15 +82,25 @@ class CameraHandler():
             elif results[0].boxes.cls[i] == 6:
                 if box.xyxy[0][3] > 180 and box.xyxy[0][0] > 150:
                     box_value = 6
+            elif results[0].boxes.cls[i] == 2:
+                if box.xyxy[0][3] > 180:
+                    box_value = 2
+            elif results[0].boxes.cls[i] == 3:
+                if box.xyxy[0][3] > 100:
+                    box_value = 3
             i += 1
-        # if box_value == 7:
-        #     if box.xyxy[0][2] > 500:
-        #         box_value = 20
+        if box_value == 0:
+            if box.xyxy[0][0] > 550 or box.xyxy[0][2] < 100:
+                box_value = 20
+        if box_value == 7:
+            if box.xyxy[0][3] < 300:
+                box_value = 20
         if box_value == 20: 
             if not self.prev_sign == 'none':
                 self.prev_sign = "none"
                 self.sign_pub.publish("none")
             return
+        
         print(box_value)
         detected = names[int(box_value)]
         if self.prev_sign == detected:
