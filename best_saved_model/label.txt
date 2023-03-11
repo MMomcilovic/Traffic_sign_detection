@@ -1,0 +1,13 @@
+car
+crosswalk
+highway_entry
+highway_exit
+no_entry
+onewayroad
+parking
+pedestrian
+priority
+roadblock
+roundabout
+stop
+trafficlight

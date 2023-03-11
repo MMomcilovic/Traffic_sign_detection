@@ -1,0 +1,24 @@
+description: Ultralytics best model trained on data.yaml
+author: Ultralytics
+license: GPL-3.0 https://ultralytics.com/license
+version: 8.0.52
+stride: 32
+task: detect
+batch: 1
+imgsz:
+- 640
+- 640
+names:
+  0: car
+  1: crosswalk
+  2: highway_entry
+  3: highway_exit
+  4: no_entry
+  5: onewayroad
+  6: parking
+  7: pedestrian
+  8: priority
+  9: roadblock
+  10: roundabout
+  11: stop
+  12: trafficlight
